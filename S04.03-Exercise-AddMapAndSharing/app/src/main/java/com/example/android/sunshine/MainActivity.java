@@ -23,7 +23,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -155,6 +154,17 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
         mErrorMessageDisplay.setVisibility(View.VISIBLE);
     }
 
+    private void showMap(Uri geolocation) {
+        // Create an intent with the action, ACTION_VIEW because we want to view the contents of the Uri
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        // Pass geolocation as data to intent
+        intent.setData(geolocation);
+        // Check that intent has an application that can resolve the activity
+        if (intent.resolveActivity(getPackageManager()) != null ) {
+            startActivity(intent);
+        }
+    }
+
     public class FetchWeatherTask extends AsyncTask<String, Void, String[]> {
 
         @Override
@@ -221,7 +231,28 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
             return true;
         }
 
-        // TODO (2) Launch the map when the map menu item is clicked
+        // COMPLETED (2) Launch the map when the map menu item is clicked
+        if (id == R.id.action_map) {
+            // Will open default map location if no address, lat, or lon values are passed
+            String addressString = "";
+            int lat = 0;
+            int lon = 0;
+
+            // Uri builder
+            Uri.Builder builder = new Uri.Builder();
+            builder.scheme("geo")
+                    .path(Integer.toString(lat) + "," + Integer.toString(lon))
+                    .appendQueryParameter("q", addressString);
+
+            // Builds geolocation Uri
+            Uri mapUri = builder.build();
+
+            // Opens map with respective geolocation Uri
+            showMap(mapUri);
+
+            // Returns true that option was selected
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
