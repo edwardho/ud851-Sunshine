@@ -341,16 +341,17 @@ public class MainActivity extends AppCompatActivity implements
             return true;
         }
 
-        if (id == R.id.action_map) {
+        else if (id == R.id.action_map) {
             openLocationInMap();
             return true;
         }
 
-        // TODO (1) Add new Activity called SettingsActivity using Android Studio wizard
-        // Do step 2 in SettingsActivity
-        // TODO (2) Set setDisplayHomeAsUpEnabled to true on the support ActionBar
-
-        // TODO (6) Launch SettingsActivity when the Settings option is clicked
+        // COMPLETE (6) Launch SettingsActivity when the Settings option is clicked
+        else if (id == R.id.action_settings) {
+            Intent startSettingsActivity = new Intent(this, SettingsActivity.class);
+            startActivity(startSettingsActivity);
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
