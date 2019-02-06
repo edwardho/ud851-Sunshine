@@ -12,7 +12,7 @@ import android.support.v7.preference.PreferenceScreen;
 // COMPLETE (4) Create SettingsFragment and extend PreferenceFragmentCompat
 // COMPLETE (10) Implement OnSharedPreferenceChangeListener from SettingsFragment
 public class SettingsFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener, Preference.OnPreferenceChangeListener {
-    
+
     // COMPLETE (5) Override onCreatePreferences and add the preference xml file using addPreferencesFromResource
     @Override
     public void onCreatePreferences(Bundle bundle, String s) {
