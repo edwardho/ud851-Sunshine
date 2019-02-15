@@ -5,8 +5,8 @@ android {
 
     defaultConfig {
         applicationId "com.example.android.sunshine"
-        minSdkVersion 14
-        targetSdkVersion 25
+        minSdkVersion 21
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -17,7 +17,10 @@ android {
         }
     }
 
-    //  TODO (1) Enable databinding
+    //  COMPLETE (1) Enable databinding
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
