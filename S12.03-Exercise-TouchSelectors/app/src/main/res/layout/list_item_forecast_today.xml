@@ -26,16 +26,14 @@
   - but again, we wanted to avoid making things too complicated.                                 -
   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-<!-- TODO (3) Create a touch selector called today_touch_selector for the today list item layout -->
-
-<!-- TODO (4) Replace the background color for the today list item with today_touch_selector -->
+<!-- COMPLETE (4) Replace the background color for the today list item with today_touch_selector -->
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/today_touch_selector"
     android:paddingBottom="@dimen/today_forecast_list_item_vertical_padding"
     android:paddingTop="@dimen/today_forecast_list_item_vertical_padding">
 
@@ -68,7 +66,7 @@
         android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        android:textColor="@color/white"
+        android:textColor="@color/primary_text"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/weather_icon"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -93,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:textColor="@color/white"
+        android:textColor="@color/secondary_text"
         android:textSize="20sp"
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintLeft_toLeftOf="@+id/weather_icon"
@@ -115,7 +113,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
-        android:textColor="@color/white"
+        android:textColor="@color/primary_text"
         android:textSize="72sp"
         app:layout_constraintBottom_toBottomOf="@+id/weather_icon"
         app:layout_constraintHorizontal_bias="0.45"
@@ -138,7 +136,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
-        android:textColor="@color/white"
+        android:textColor="@color/secondary_text"
         android:textSize="36sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/weather_description"
         app:layout_constraintLeft_toLeftOf="@+id/high_temperature"
